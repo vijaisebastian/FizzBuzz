@@ -10,18 +10,6 @@ namespace FizzBuzz.App
     {
         static void Main(string[] args)
         {
-            Program program = new Program();
-
-            for (int i = 1; i <= 100; i++)
-            {
-                Console.WriteLine(program.PlayFizzBuzz(i));
-            }
-
-            Console.ReadLine();
-        }
-
-        public string PlayFizzBuzz(int number)
-        {
             var conditions = new List<ICheck>
             {
                 new FizzCheck(),
@@ -29,23 +17,14 @@ namespace FizzBuzz.App
                 new FizzBuzzCheck(),
             };
 
-            string response = string.Empty;
+            Game game = new Game(conditions);
 
-            foreach (var condition in conditions)
+            for (int i = 1; i <= 100; i++)
             {
-                if (condition.Validate(number))
-                {
-                    response = condition.GetResponse();
-                }
+                Console.WriteLine(game.PlayFizzBuzz(i));
             }
 
-            if (string.IsNullOrEmpty(response))
-            {
-                response = number.ToString();
-            }
-
-            return response;
-
+            Console.ReadLine();
         }
     }
 }

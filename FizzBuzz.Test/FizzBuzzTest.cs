@@ -1,6 +1,7 @@
 ﻿using FizzBuzz.App;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 
 namespace FizzBuzz.Test
 {
@@ -49,5 +50,61 @@ namespace FizzBuzz.Test
             Assert.IsFalse(fizzBuzzCheck.Validate(29));
         }
 
+        [TestMethod]
+        public void Verify_PlayFizzBuzz_Return_Fizz_When_Input_Is_Divisible_By_Three()
+        {
+            var conditions = new List<ICheck>
+            {
+                new FizzCheck(),
+                new BuzzCheck(),
+                new FizzBuzzCheck(),
+            };
+            
+            Game game = new Game(conditions);
+            Assert.AreEqual(game.PlayFizzBuzz(36), "Fizz");
+        }
+
+        [TestMethod]
+        public void Verify_PlayFizzBuzz_Return_Buzz_When_Input_Is_Divisible_By_Five()
+        {
+            var conditions = new List<ICheck>
+            {
+                new FizzCheck(),
+                new BuzzCheck(),
+                new FizzBuzzCheck(),
+            };
+
+            Game game = new Game(conditions);
+            Assert.AreEqual(game.PlayFizzBuzz(70), "Buzz");
+        }
+
+        [TestMethod]
+        public void Verify_PlayFizzBuzz_Return_FizzBuzz_When_Input_Is_Divisible_By_Three_And_Five()
+        {
+            var conditions = new List<ICheck>
+            {
+                new FizzCheck(),
+                new BuzzCheck(),
+                new FizzBuzzCheck(),
+            };
+
+            Game game = new Game(conditions);
+            Assert.AreEqual(game.PlayFizzBuzz(45), "FizzBuzz");
+        }
+
+        [TestMethod]
+        public void Verify_PlayFizzBuzz_Return_Number_When_Input_Is_Not_Divisible_By_Three_And_Five()
+        {
+            var conditions = new List<ICheck>
+            {
+                new FizzCheck(),
+                new BuzzCheck(),
+                new FizzBuzzCheck(),
+            };
+
+            Game game = new Game(conditions);
+            int expected = 41;
+            Assert.AreEqual(game.PlayFizzBuzz(41), expected.ToString());
+        }
     }
 }

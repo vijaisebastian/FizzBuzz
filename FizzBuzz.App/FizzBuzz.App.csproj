@@ -46,6 +46,7 @@
     <Compile Include="BuzzCheck.cs" />
     <Compile Include="FizzBuzzCheck.cs" />
     <Compile Include="FizzCheck.cs" />
+    <Compile Include="Game.cs" />
     <Compile Include="ICheck.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
