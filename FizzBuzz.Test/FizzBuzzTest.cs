@@ -7,8 +7,18 @@ namespace FizzBuzz.Test
     public class FizzBuzzTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Verify_FizzCheck_Return_True_When_Input_Is_Divisible_By_Three()
         {
+            FizzCheck fizzCheck = new FizzCheck();
+            Assert.IsTrue(fizzCheck.Validate(6));
         }
+
+        [TestMethod]
+        public void Verify_FizzCheck_Return_True_When_Input_Is_Not_Divisible_By_Three()
+        {
+            FizzCheck fizzCheck = new FizzCheck();
+            Assert.IsFalse(fizzCheck.Validate(5));
+        }
+
     }
 }
