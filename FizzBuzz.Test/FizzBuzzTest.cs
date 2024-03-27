@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FizzBuzz.App;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 namespace FizzBuzz.Test
