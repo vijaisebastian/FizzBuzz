@@ -2,14 +2,14 @@
 
 namespace FizzBuzz.App
 {
-    public class BuzzCheck
+    public class BuzzCheck:ICheck
     {
         public bool Validate(int number)
         {
             return number % 5 == 0;
         }
 
-        public string GetString()
+        public string GetResponse()
         {
             return "Buzz";
         }

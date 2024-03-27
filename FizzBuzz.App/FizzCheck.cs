@@ -2,7 +2,7 @@
 
 namespace FizzBuzz.App
 {
-    public class FizzCheck
+    public class FizzCheck : ICheck
     {
 
         public bool Validate(int number)
@@ -10,7 +10,7 @@ namespace FizzBuzz.App
             return number % 3 == 0;
         }
 
-        public string GetString()
+        public string GetResponse()
         {
             return "Fizz";
         }
