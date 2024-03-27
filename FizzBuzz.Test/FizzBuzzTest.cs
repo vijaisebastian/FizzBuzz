@@ -15,7 +15,7 @@ namespace FizzBuzz.Test
         }
 
         [TestMethod]
-        public void Verify_FizzCheck_Return_True_When_Input_Is_Not_Divisible_By_Three()
+        public void Verify_FizzCheck_Return_False_When_Input_Is_Not_Divisible_By_Three()
         {
             FizzCheck fizzCheck = new FizzCheck();
             Assert.IsFalse(fizzCheck.Validate(5));
@@ -29,7 +29,7 @@ namespace FizzBuzz.Test
         }
 
         [TestMethod]
-        public void Verify_BuzzCheck_Return_True_When_Input_Is_Not_Divisible_By_Five()
+        public void Verify_BuzzCheck_Return_False_When_Input_Is_Not_Divisible_By_Five()
         {
             BuzzCheck buzzCheck = new BuzzCheck();
             Assert.IsFalse(buzzCheck.Validate(12));
